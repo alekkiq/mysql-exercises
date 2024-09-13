@@ -65,8 +65,84 @@ SELECT DISTINCT co2_budget FROM goal;
 ## Where-clause select
 
 ### 1
-SELECT country.name as "country name", airport.name as "airport name" 
-FROM country 
-JOIN airprot on country.iso_country = airport.iso_country 
+SELECT country.name as "country name", airport.name as "airport name"\
+FROM country\
+JOIN airport on country.iso_country = airport.iso_country\
 WHERE country.name='Iceland';
 
+![alt text](img/exc_2/1.png)
+
+### 2
+SELECT airport.name as "airport name"\
+FROM country\
+JOIN airport on country.iso_country = airport.iso_country\
+WHERE country.name='France' AND airport.type='large_airport';
+
+![alt text](img/exc_2/2.png)
+
+### 3
+SELECT country.name as "country_name", airport.name as "airport_name"\
+FROM country\
+JOIN airport on country.iso_country = airport.iso_country\
+WHERE airport.continent='AN';
+
+![alt text](img/exc_2/3.png)
+
+### 4
+SELECT airport.elevation_ft\
+FROM game\
+JOIN airport on game.location = airport.ident\
+WHERE screen_name='Heini';
+
+![alt text](img/exc_2/4.png)
+
+### 5
+SELECT airport.elevation_ft * 0.3048 as "elevation_m"\
+FROM game\
+JOIN airport on game.location = airport.ident\
+WHERE screen_name='Heini';
+
+![alt text](img/exc_2/5.png)
+
+### 6
+SELECT airport.name as "name"\
+FROM game\
+JOIN airport on game.location = airport.ident\
+WHERE screen_name='Ilkka';
+
+![alt text](img/exc_2/6.png)
+
+### 7
+SELECT country.name as "name"\
+FROM game\
+JOIN airport on game.location = airport.ident\
+JOIN country on airport.iso_country = country.iso_country\
+WHERE screen_name='Ilkka';
+
+![alt text](img/exc_2/7.png)
+
+### 8
+SELECT goal.name as "name"\
+FROM game\
+JOIN goal_reached on game.id = goal_reached.game_id\
+JOIN goal on goal_reached.goal_id = goal.id\
+WHERE screen_name='Heini';
+
+![alt text](img/exc_2/8.png)
+
+### 9
+SELECT airport.name as "name"\
+FROM game\
+JOIN ???\
+WHERE screen_name='Ilkka';
+
+En saanut ideasta kiinni, missä saavutuksien lokaatio tallentuu.
+
+### 10
+Sama homma kun 9:ssä
+
+<hr>
+
+## Join-exercises
+
+### 1
