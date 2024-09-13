@@ -1,5 +1,8 @@
 # MySQL exercises
 
+### Database populator
+I built a [Python database generator](https://github.com/alekkiq/db-populator/tree/flightgame-setup) for these exercises.
+
 ## Sections
 - [03: Single table select](#03-single-table-select)
 - [04: Where clause select](#04-where-clause-select)
@@ -173,13 +176,14 @@ WHERE screen_name='Heini';
 
 ### 9
 ```sql
+-- TODO
 SELECT airport.name as "name"
 FROM game
 JOIN ???
 WHERE screen_name='Ilkka';
 ```
 
-En saanut ideasta kiinni, missä saavutuksien lokaatio tallentuu.
+En saanut ideasta kiinni, mistä saavutuksien lokaatio tulisi repiä
 
 ### 10
 Sama homma kun 9:ssä
