@@ -1,7 +1,7 @@
 # MySQL exercises
 
 
-## Single table select
+## 03: Single table select
 
 ### 1
 SELECT * FROM goal;
@@ -62,7 +62,7 @@ SELECT DISTINCT co2_budget FROM goal;
 
 <hr>
 
-## Where-clause select
+## 04: Where-clause select
 
 ### 1
 SELECT country.name as "country name", airport.name as "airport name"\
@@ -143,6 +143,48 @@ Sama homma kun 9:ssä
 
 <hr>
 
-## Join-exercises
+## 05: Join-exercises
 
 ### 1
+SELECT country.name as "country name", airport.name as "airport name"\
+FROM airport\
+JOIN country on airport.iso_country = country.iso_country\
+WHERE scheduled_service='yes' AND country.name='Finland';
+
+![alt text](img/exc_3/1.png)
+
+### 2
+SELECT screen_name, airport.name as "name"\
+FROM game\
+JOIN airport on game.location = airport.ident;
+
+![alt text](img/exc_3/2.png)
+
+### 3
+SELECT screen_name, country.name as "name"\
+FROM game\
+JOIN airport on game.location = airport.ident\
+JOIN country on airport.iso_country = country.iso_country;
+
+![alt text](img/exc_3/3.png)
+
+### 4
+SELECT airport.name as "name", screen_name\
+FROM airport\
+LEFT JOIN game on game.location = airport.ident\
+WHERE airport.name LIKE '%hels%'
+ORDER BY screen_name DESC;
+
+![alt text](img/exc_3/4.png)
+
+### 5
+SELECT goal.name as "name", screen_name
+FROM goal
+LEFT JOIN goal_reached on goal.id = goal_reached.goal_id
+LEFT JOIN game on goal_reached.game_id = game.id;
+
+![alt text](img/exc_3/5.png)
+
+<hr>
+
+## 
