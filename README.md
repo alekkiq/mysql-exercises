@@ -4,6 +4,7 @@
 I built a [Python database generator](https://github.com/alekkiq/db-populator/tree/flightgame-setup) for these exercises.
 
 ## Sections
+Sections are compiled to this file, but they are also accessible in the ```parts/``` folder separately.
 - [03: Single table select](#03-single-table-select)
 - [04: Where clause select](#04-where-clause-select)
 - [05: Join exercises](#05-join-exercises)
