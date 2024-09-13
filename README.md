@@ -172,19 +172,83 @@ JOIN country on airport.iso_country = country.iso_country;
 SELECT airport.name as "name", screen_name\
 FROM airport\
 LEFT JOIN game on game.location = airport.ident\
-WHERE airport.name LIKE '%hels%'
+WHERE airport.name LIKE '%hels%'\
 ORDER BY screen_name DESC;
 
 ![alt text](img/exc_3/4.png)
 
 ### 5
-SELECT goal.name as "name", screen_name
-FROM goal
-LEFT JOIN goal_reached on goal.id = goal_reached.goal_id
+SELECT goal.name as "name", screen_name\
+FROM goal\
+LEFT JOIN goal_reached on goal.id = goal_reached.goal_id\
 LEFT JOIN game on goal_reached.game_id = game.id;
 
 ![alt text](img/exc_3/5.png)
 
 <hr>
 
-## 
+## 06: Join in Where clause
+
+### 1
+SELECT name\
+FROM country\
+WHERE iso_country in(\
+    SELECT iso_country\
+    FROM airport\
+    WHERE name LIKE "satsuma%"\
+);
+
+![alt text](img/exc_4/1.png)
+
+### 2
+SELECT name\
+FROM airport\
+WHERE iso_country in (\
+    SELECT iso_country\
+    FROM country\
+    WHERE iso_country='MC'
+);
+
+![alt text](img/exc_4/2.png)
+
+### 3
+SELECT screen_name\
+FROM game\
+WHERE id in(\
+    SELECT game_id\
+    FROM goal_reached\
+    WHERE goal_id in(\
+        SELECT id\
+        FROM goal\
+        WHERE target_text='Clouds'
+    )\
+);
+
+![alt text](img/exc_4/3.png)
+
+### 4
+SELECT name\
+FROM country\
+WHERE iso_country not in(\
+    SELECT iso_country\
+    FROM airport\
+);
+
+![alt text](img/exc_4/4.png)
+
+### 5
+SELECT name\
+FROM goal\
+WHERE id not in(\
+    SELECT goal_id\
+    FROM goal_reached\
+    WHERE game_id in(\
+        SELECT id\
+        FROM game\
+        WHERE screen_name='Heini'\
+    )\
+);
+
+![alt text](img/exc_4/5.png)
+
+<hr>
