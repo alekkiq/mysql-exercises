@@ -18,7 +18,7 @@ I built a [Python database generator](https://github.com/alekkiq/db-populator/tr
 SELECT * FROM goal;
 ```
 
-![alt text](img/03/select_all_from.png)
+![alt text](img/03/1.png)
 
 ### 2
 ```sql
@@ -27,7 +27,7 @@ FROM airport
 WHERE iso_country='FI';
 ```
 
-![alt text](img/03/select_name_type_from.png)
+![alt text](img/03/2.png)
 
 ### 3
 ```sql
@@ -37,7 +37,7 @@ WHERE iso_country='FI'
 ORDER BY name;
 ```
 
-![alt text](img/03/select_name_sorted.png)
+![alt text](img/03/3.png)
 
 ### 4
 ```sql
@@ -47,7 +47,7 @@ WHERE iso_country='FI'
 ORDER BY type, name;
 ```
 
-![alt text](img/03/select_name_type_ordered.png)
+![alt text](img/03/4.png)
 
 ### 5
 ```sql
@@ -56,7 +56,7 @@ FROM country
 WHERE name LIKE 'F%';
 ```
 
-![alt text](image.png)
+![alt text](img/03/5.png)
 
 ### 6
 ```sql
@@ -65,28 +65,28 @@ FROM country
 WHERE name like '%f%';
 ```
 
-![alt text](img/03/select_name_where_f.png)
+![alt text](img/03/6.png)
 
 ### 7
 ```sql
 SELECT location FROM game WHERE screen_name='Vesa';
 ```
 
-![alt text](img/03/select_location_screenname.png)
+![alt text](img/03/7.png)
 
 ### 8
 ```sql
 SELECT co2_consumed FROM game WHERE screen_name='Ilkka';
 ```
 
-![alt text](img/03/select_co2consumed_screenname.png)
+![alt text](img/03/8.png)
 
 ### 9
 ```sql
 SELECT DISTINCT co2_budget FROM goal;
 ```
 
-![alt text](img/03/select_distinct.png)
+![alt text](img/03/9.png)
 
 <hr>
 
